@@ -4,6 +4,7 @@ import com.shivraj.springboot.hello_spring.dependencyinjection.NotificationServi
 import com.shivraj.springboot.hello_spring.dependencyinjection.impl.EmailNotificationService;
 import com.shivraj.springboot.hello_spring.dependencyinjection.impl.SmsNotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,7 +36,7 @@ public class HelloSpringApplication implements CommandLineRunner {
 
     final private NotificationService notificationService;
 
-    public HelloSpringApplication(NotificationService notificationService) {
+    public HelloSpringApplication(@Qualifier("emailNotificationService") NotificationService notificationService) {
         this.notificationService = notificationService;
     }
 
