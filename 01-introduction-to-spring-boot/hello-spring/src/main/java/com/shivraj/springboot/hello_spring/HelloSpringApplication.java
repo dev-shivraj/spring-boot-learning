@@ -36,8 +36,8 @@ public class HelloSpringApplication implements CommandLineRunner {
 
     final private NotificationService notificationService;
 
-//    public HelloSpringApplication(@Qualifier("emailNotificationService") NotificationService notificationService) {
-    public HelloSpringApplication(NotificationService notificationService) {
+    public HelloSpringApplication(@Qualifier("emailNotificationService") NotificationService notificationService) {
+//    public HelloSpringApplication(NotificationService notificationService) {
         this.notificationService = notificationService;
     }
 
