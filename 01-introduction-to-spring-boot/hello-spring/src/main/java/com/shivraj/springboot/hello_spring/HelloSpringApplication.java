@@ -12,8 +12,23 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloSpringApplication implements CommandLineRunner {
     // ======================================    codes related to dependency injection    =================================================
 
+    // we can use field injection, constructor injection or setter injection to inject the dependency
+
+
+    // ================== field injection   ==============================
+    // here we are using field injection
+    // to inject the dependency of NotificationService interface
+    // using @Autowired annotation
+
+
     @Autowired
-    NotificationService notificationService;
+    private NotificationService notificationService;
+
+
+    // ===================================================================
+
+
+
 
     public static void main(String[] args) {
         SpringApplication.run(HelloSpringApplication.class, args);
