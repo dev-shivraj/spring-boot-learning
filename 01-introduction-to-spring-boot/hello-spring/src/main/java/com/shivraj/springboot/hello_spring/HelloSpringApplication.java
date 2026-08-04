@@ -12,8 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloSpringApplication implements CommandLineRunner {
     // ======================================    codes related to dependency injection    =================================================
 
-//    @Autowired
-//    NotificationService notificationService;
+    @Autowired
+    NotificationService notificationService;
 
     public static void main(String[] args) {
         SpringApplication.run(HelloSpringApplication.class, args);
@@ -21,12 +21,19 @@ public class HelloSpringApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        // here it is loosely coupled because we are using the interface NotificationService and injecting the implementation class using @Autowired annotation
+        notificationService.sendNotification("Hello, this is a test notification!");
+
+
+        /*
         // here it is tightly coupled because we are creating the object of EmailNotificationService class directly in the code,
         // so if we want to change the implementation of NotificationService, we have to change the code here as well
 
         // NotificationService notificationService = new EmailNotificationService();
         NotificationService notificationService = new SmsNotificationService();
         notificationService.sendNotification("Hello, this is a test notification!");
+         */
     }
 // =========================================================================================================================================
 
