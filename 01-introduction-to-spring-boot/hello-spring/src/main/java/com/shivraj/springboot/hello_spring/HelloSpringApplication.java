@@ -21,9 +21,23 @@ public class HelloSpringApplication implements CommandLineRunner {
     // using @Autowired annotation
 
 
+    /*
     @Autowired
     private NotificationService notificationService;
+     */
 
+    // ===================================================================
+
+    // ================== constructor injection   ========================
+    // here we are using constructor injection
+    // to inject the dependency of NotificationService interface
+    // using Constructor of the Class
+
+    private NotificationService notificationService;
+
+    public HelloSpringApplication(NotificationService notificationService) {
+        this.notificationService = notificationService;
+    }
 
     // ===================================================================
 
