@@ -9,8 +9,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @SpringBootApplication
 public class HelloSpringApplication implements CommandLineRunner {
+
+    @Autowired
+    private Map<String, NotificationService> notificationServices = new HashMap<>();
+
     // ======================================    codes related to dependency injection    =================================================
 
     // we can use field injection, constructor injection or setter injection to inject the dependency
@@ -53,8 +60,21 @@ public class HelloSpringApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        System.out.println("=====================================================================================================================");
         // here it is loosely coupled because we are using the interface NotificationService and injecting the implementation class using @Autowired annotation
         notificationService.sendNotification("Hello, this is a test notification!");
+        System.out.println("=====================================================================================================================");
+
+
+        System.out.println("Sending notification using all the available notification services............");
+        System.out.println("-----------------------------------------------------------------");
+        // send notification using both EmailNotificationService and SmsNotificationService
+        // this way we can send notification to all the services without changing the code in the main class
+        for(var service : notificationServices.entrySet()) {
+            System.out.println("Notification Service: " + service.getKey());
+            service.getValue().sendNotification("Hello, this is a test notification!");
+            System.out.println("-----------------------------------------------------------------");
+        }
 
 
         /*
