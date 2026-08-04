@@ -33,7 +33,7 @@ public class HelloSpringApplication implements CommandLineRunner {
     // to inject the dependency of NotificationService interface
     // using Constructor of the Class
 
-    private NotificationService notificationService;
+    final private NotificationService notificationService;
 
     public HelloSpringApplication(NotificationService notificationService) {
         this.notificationService = notificationService;
