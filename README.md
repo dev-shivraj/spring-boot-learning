@@ -10,7 +10,7 @@ Each topic contains one or more standalone Spring Boot applications created usin
 
 ## Core Spring Boot
 
-- [ ] 01. Introduction to Spring Boot
+- [x] 01. Introduction to Spring Boot
 - [ ] 02. Spring Boot MVC & RESTful APIs
 - [ ] 03. Hibernate & Spring Boot Data JPA
 - [ ] 04. Production Ready Spring Boot Features
