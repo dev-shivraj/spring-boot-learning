@@ -1,4 +1,4 @@
-package com.learning.spring.di;
+package com.learning.spring.di.manualbeanregister;
 
 public class EmailNotificationService {
     public void send(String message) {
