@@ -15,6 +15,11 @@ public class NotificationDispatcher {
 
     public void send(String type, String message) {
         NotificationService notificationService = notificationServices.get(type);
+
+        if(notificationService == null) {
+            throw new IllegalArgumentException("Unsupported notification type: " + type);
+        }
+
         notificationService.send(message);
     }
 }

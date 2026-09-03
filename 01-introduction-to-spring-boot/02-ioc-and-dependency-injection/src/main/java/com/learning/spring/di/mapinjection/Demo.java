@@ -21,6 +21,7 @@ public class Demo {
 //        dispatcher.send("emailNotificationService", "Your order has been delivered");
 
         dispatcher.send("sms", "Your order has been shipped");
+        dispatcher.send("whatsapp", "Your order has been delivered");
         dispatcher.send("email", "Your order has been delivered");
 
     }
