@@ -15,7 +15,7 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    @Autowired
+    @Autowired(required = false)
     public void setAuditService(AuditService auditService) {
         this.auditService = auditService;
     }
@@ -24,6 +24,9 @@ public class OrderService {
         System.out.println("Order placed");
         orderRepository.save();
         notificationService.send("Order confirmation");
-        auditService.audit("Order placed successfully");
+
+        if(this.auditService != null) {
+            auditService.audit("Order placed successfully");
+        }
     }
 }
