@@ -12,11 +12,18 @@ public class Demo {
         orderService.placeOrder();
 
 
+        /*
+            System.out.println("------------------------------------------");
+            // after making EmailNotificationService as primary bean, it doesn't mean that we disable other implementation like SmsNotificationService in our case
+            // it still exists
+            SmsNotificationService smsService = context.getBean(SmsNotificationService.class);
+            smsService.send("Hello!");
+         */
+
+
         System.out.println("------------------------------------------");
-        // after making EmailNotificationService as primary bean, it doesn't mean that we disable other implementation like SmsNotificationService in our case
-        // it still exists
-        SmsNotificationService smsService = context.getBean(SmsNotificationService.class);
-        smsService.send("Hello!");
+        OtpService otpService = context.getBean(OtpService.class);
+        otpService.sendOtp();
 
     }
 }
