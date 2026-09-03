@@ -17,5 +17,11 @@ public class ContainerDemo {
         System.out.println("-----------------------------------");
         SmsNotificationService smsNotificationService = context.getBean(SmsNotificationService.class);
         smsNotificationService.send("Hello Again!");
+
+
+        System.out.println("-----------------------------------");
+        OrderService orderService = context.getBean(OrderService.class);
+        orderService.placeOrder();
+
     }
 }

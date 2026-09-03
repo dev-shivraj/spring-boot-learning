@@ -3,7 +3,7 @@ package com.learning.spring.di.springbeanregister;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SmsNotificationService {
+public class SmsNotificationService implements NotificationService{
     public SmsNotificationService() {
         System.out.println("SmsNotificationService object created");
     }
