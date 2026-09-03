@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 public class OtpService {
     NotificationService notificationService;
 
-    public OtpService(@Qualifier("smsNotificationService") NotificationService notificationService) {
+//    public OtpService(@Qualifier("smsNotificationService") NotificationService notificationService) {
+//        this.notificationService = notificationService;
+//    }
+
+    public OtpService(@Qualifier("sms") NotificationService notificationService) {
         this.notificationService = notificationService;
     }
 
