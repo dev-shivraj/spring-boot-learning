@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("email")
 @Primary
 @Order(2)
 public class EmailNotificationService implements NotificationService {

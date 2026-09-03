@@ -17,8 +17,11 @@ public class Demo {
 
         System.out.println("------------------------------------------");
         NotificationDispatcher dispatcher = context.getBean(NotificationDispatcher.class);
-        dispatcher.send("smsNotificationService", "Your order has been shipped");
-        dispatcher.send("emailNotificationService", "Your order has been delivered");
+//        dispatcher.send("smsNotificationService", "Your order has been shipped");
+//        dispatcher.send("emailNotificationService", "Your order has been delivered");
+
+        dispatcher.send("sms", "Your order has been shipped");
+        dispatcher.send("email", "Your order has been delivered");
 
     }
 }
