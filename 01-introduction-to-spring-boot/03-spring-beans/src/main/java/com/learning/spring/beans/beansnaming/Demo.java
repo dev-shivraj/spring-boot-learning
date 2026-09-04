@@ -11,5 +11,13 @@ public class Demo {
         EmailService emailService = (EmailService) context.getBean("emailService");
         // EmailService emailService = context.getBean("emailService", EmailService.class);
         emailService.sendEmail();
+
+        System.out.println("-------------------------------------");
+        PaymentClient ordersPaymentClient = (PaymentClient) context.getBean("ordersPaymentClient");
+        ordersPaymentClient.doSomething();
+
+        System.out.println("-------------------------------------");
+        PaymentClient refundsPaymentClient = (PaymentClient) context.getBean("refundsPaymentClient");
+        refundsPaymentClient.doSomething();
     }
 }
