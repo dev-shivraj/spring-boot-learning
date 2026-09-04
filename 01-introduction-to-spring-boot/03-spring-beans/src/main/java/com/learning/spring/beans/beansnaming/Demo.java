@@ -19,5 +19,9 @@ public class Demo {
         System.out.println("-------------------------------------");
         PaymentClient refundsPaymentClient = (PaymentClient) context.getBean("refundsPaymentClient");
         refundsPaymentClient.doSomething();
+
+        System.out.println("-------------------------------------");
+        SmsNotificationService smsNotifier = (SmsNotificationService) context.getBean("smsNotifier");
+        smsNotifier.sendSms("Hello");
     }
 }
