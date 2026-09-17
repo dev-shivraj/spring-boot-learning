@@ -4,7 +4,6 @@ Spring Beans are one of the foundational concepts of the Spring Framework. Nearl
 
 This guide walks through Beans from first principles to interview-ready mastery: what they are, how they're created and registered, how ambiguity between multiple Beans is resolved, and a complete worked example tying every concept together.
 
-> **Note on the code samples:** all quotes have been normalized to straight quotes (`"..."`) — the original curly quotes (`“…”`) won't compile in real Java code.
 
 ---
 
